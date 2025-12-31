@@ -1,6 +1,6 @@
-# minite
+# Minite
 
-**minite** is a lightweight, open-source toolchain for working with Minecraft mods across versions.
+**Minite** is a lightweight, open-source toolchain for working with Minecraft mods across versions.
 
 Its first component, the resolver, focuses on answering one brutally practical question:
 
@@ -33,7 +33,7 @@ This is a resolver, not a platform.
 
 ## Scope Philosophy
 
-minite is intentionally narrow in scope.
+Minite is intentionally narrow in scope.
 
 Each component should:
 - Do one thing
@@ -70,7 +70,7 @@ These are future layers, not current goals.
 ---
 
 ## Legal
-minite is an independent, open-source project and is **not affiliated with or endorsed by Ninite**.
+Minite is an independent, open-source project and is **not affiliated with or endorsed by Ninite**.
 
 ---
 
