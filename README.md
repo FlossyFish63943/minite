@@ -1,48 +1,78 @@
-Minite is an independent, open-source project and is not affiliated with or endorsed by Ninite.
+# minite
 
-# minite-resolver
+**minite** is a lightweight, open-source toolchain for working with Minecraft mods across versions.
 
-minite-resolver is a small, focused tool that determines the **highest Minecraft Java Edition version**
-for which **all given mods have Fabric-compatible releases**.
+Its first component, the resolver, focuses on answering one brutally practical question:
 
-It is designed to answer one question clearly and honestly:
+> “What is the newest Minecraft Java Edition version where *all* of these mods actually exist?”
 
-> “What is the newest Minecraft version where all these mods actually exist?”
+No guesswork. No launchers. No magic.
 
-## Scope (v0)
+---
 
-**What it does**
+## minite-resolver (v0)
+
+`minite-resolver` is the core logic module of minite.
+
+### What it does
 - Accepts a list of Minecraft mod names
-- Queries Modrinth for Fabric-compatible releases
-- Computes the intersection of supported Minecraft versions
-- Outputs the highest compatible version, or a clear failure reason
+- Queries Modrinth for **Fabric-compatible** releases
+- Computes the **intersection of supported Minecraft versions**
+- Outputs the **highest compatible version**, or a clear failure reason
 
-**What it does NOT do**
+### What it does NOT do
 - Download mods
 - Resolve mod dependencies
 - Support Forge or Quilt
-- Provide a GUI (yet)
 - Act as a launcher or modpack manager
+- Provide a GUI (yet)
 
 This is a resolver, not a platform.
+
+---
+
+## Scope Philosophy
+
+minite is intentionally narrow in scope.
+
+Each component should:
+- Do one thing
+- Be explicit
+- Fail clearly
+
+Complexity is added only when it earns its place.
+
+---
 
 ## Data Source
 - Modrinth API only
 
-## Loader
-- Fabric only
+## Loader Support
+- Fabric only (v0)
+
+---
 
 ## Status
 Early prototype.  
 Interfaces may change.  
-Core logic is intentionally simple and explicit.
+Core logic is intentionally simple and inspectable.
 
-## Planned Extensions (out of scope for v0)
+---
+
+## Planned (Out of Scope for v0)
 - Web interface
 - Better mod name disambiguation
 - Optional dependency inspection
+- Bulk download orchestration
 
-These are future considerations, not current goals.
+These are future layers, not current goals.
+
+---
+
+## Legal
+minite is an independent, open-source project and is **not affiliated with or endorsed by Ninite**.
+
+---
 
 ## License
 Apache License 2.0
