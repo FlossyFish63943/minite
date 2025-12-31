@@ -1,3 +1,5 @@
+Minite is an independent, open-source project and is not affiliated with or endorsed by Ninite.
+
 # minite-resolver
 
 minite-resolver is a small, focused tool that determines the **highest Minecraft Java Edition version**
