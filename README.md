@@ -1,31 +1,39 @@
 # Minite
 
-**Minite** is a lightweight, open-source toolchain for working with Minecraft mods across versions.
+**Minite** is a lightweight, open-source toolchain for reasoning about Minecraft mod compatibility across versions.
 
-Its first component, the resolver, focuses on answering one brutally practical question:
+Its first component, the resolver, answers one brutally practical question:
 
 > “What is the newest Minecraft Java Edition version where *all* of these mods actually exist?”
 
-No guesswork. No launchers. No magic.
+No guesswork.  
+No launchers.  
+No magic.
 
 ---
 
-## minite-resolver (v0)
+## minite-resolver (v0.1)
 
-`minite-resolver` is the core logic module of minite.
+`minite-resolver` is the core logic module of Minite.
 
 ### What it does
 - Accepts a list of Minecraft mod names
 - Queries Modrinth for **Fabric-compatible** releases
 - Computes the **intersection of supported Minecraft versions**
-- Outputs the **highest compatible version**, or a clear failure reason
+- Outputs:
+  - A **sorted list** of compatible versions
+  - The **highest compatible Minecraft version**, clearly highlighted
+- Fails explicitly on:
+  - Zero mods
+  - Typo’d or missing mod names
+  - No shared compatible versions
 
 ### What it does NOT do
 - Download mods
 - Resolve mod dependencies
 - Support Forge or Quilt
 - Act as a launcher or modpack manager
-- Provide a GUI (yet)
+- Provide a GUI
 
 This is a resolver, not a platform.
 
@@ -38,6 +46,7 @@ Minite is intentionally narrow in scope.
 Each component should:
 - Do one thing
 - Be explicit
+- Be inspectable
 - Fail clearly
 
 Complexity is added only when it earns its place.
@@ -48,22 +57,26 @@ Complexity is added only when it earns its place.
 - Modrinth API only
 
 ## Loader Support
-- Fabric only (v0)
+- Fabric only (v0.1)
 
 ---
 
 ## Status
-Early prototype.  
-Interfaces may change.  
-Core logic is intentionally simple and inspectable.
+**v0.1 — Initial functional release**
+
+- Core resolver logic implemented
+- Deterministic version sorting
+- Edge cases handled
+- Interfaces still subject to change
 
 ---
 
-## Planned (Out of Scope for v0)
-- Web interface
-- Better mod name disambiguation
-- Optional dependency inspection
-- Bulk download orchestration
+## Planned (Out of Scope for v0.1)
+- Forge / Quilt support
+- Dependency resolution
+- Web or GUI frontend
+- Smarter mod name disambiguation
+- Mod download orchestration
 
 These are future layers, not current goals.
 
